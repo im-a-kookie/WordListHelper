@@ -291,7 +291,7 @@ namespace WordListBuilder.WordListControl
         public void Resort()
         {
             if(IsSorted) _words.Sort();
-            Refresh();
+            this.Invoke(() => Refresh());
         }
 
 
@@ -744,7 +744,7 @@ namespace WordListBuilder.WordListControl
         public void Clear()
         {
             Words.Clear();
-            Resort();
+            this.Invoke(() => Refresh());
         }
 
         public bool Contains(string item)
